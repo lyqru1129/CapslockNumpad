@@ -9,12 +9,12 @@
 ; Press \ (above Enter) to toggle NumLock.
 
 ; 789  ->  789
-; uio  ->  456
-; jkl  ->  123
+; 456  ->  456
+; 123  ->  123
 ; 0./  ->  0./
 ; *-=  ->  *-+
 
-
+; Modified by lyqru1129 (2020-09-09)
 
 ; ======================================
 
@@ -53,7 +53,7 @@ update_traytip()
 
 ^CapsLock::
     Suspend, Toggle
-    SoundPlay, *48
+    ;SoundPlay, *48
     update_traytip()
     Return
 
@@ -62,18 +62,17 @@ update_traytip()
 ; - Rebinds --------------------------------------------------
 
 ;; Common to both numlock states:
-i::Numpad5
+5::Numpad5
 /::NumpadDiv
 =::NumpadAdd
 -::NumpadSub
 +8::NumpadMult
-m::Numpad0
 0::Numpad0
 SC034::NumpadDot  ; Period/Greater-Than key
 
 SC02B::           ; Backslash/Pipe
     Send {NumLock}
-    SoundPlay, *64
+    ;SoundPlay, *64
     update_traytip()
     Return
 
@@ -84,12 +83,12 @@ SC02B::           ; Backslash/Pipe
     8::Numpad8
     9::Numpad9
 
-    u::Numpad4
-    o::Numpad6
+    4::Numpad4
+    6::Numpad6
 
-    j::Numpad1
-    k::Numpad2
-    l::Numpad3
+    1::Numpad1
+    2::Numpad2
+    3::Numpad3
 
 
 #If (numlock_on() == false)
@@ -97,9 +96,9 @@ SC02B::           ; Backslash/Pipe
     8::NumpadUp
     9::NumpadPgUp
 
-    u::NumpadLeft
-    o::NumpadRight
+    4::NumpadLeft
+    6::NumpadRight
 
-    j::NumpadEnd
-    k::NumpadDown
-    l::NumpadPgDn
+    1::NumpadEnd
+    2::NumpadDown
+    3::NumpadPgDn
